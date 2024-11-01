@@ -25,9 +25,6 @@ Font Awesome: Icons for social media links
 
 Live Preview: [Coming soon on Netlify!]
 
-Deploy status badge
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/663b506e-b05b-45a8-bede-e66a16e872bc/deploy-status)](https://app.netlify.com/sites/abbeyaina/deploys)
 
 Setup Instructions:
 To view or edit the project locally:
