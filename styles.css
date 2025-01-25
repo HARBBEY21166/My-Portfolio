@@ -957,7 +957,7 @@ background-color: transparent;            border-radius: 4rem;
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-/*#preloader {
+#preloader {
     aria-label: "Loading content";
   position: fixed;
   inset: 0;
@@ -1415,8 +1415,6 @@ background-color: transparent;            border-radius: 4rem;
 .form-group.full {
     grid-column: 1 / -1;
 }
-
-
 
 .visually-hidden {
     position: absolute;

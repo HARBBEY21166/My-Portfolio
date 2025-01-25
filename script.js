@@ -123,14 +123,12 @@ window.addEventListener('scroll', () => {
 /**
    * Preloader
    */
-  /*const preloader = document.querySelector('#preloader');
+  const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove();
     });
-  }*/
-
-
+  }
 
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
@@ -156,53 +154,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm');
-    
-    const validateField = (field) => {
-        const value = field.value.trim();
-        let isValid = true;
-        let errorMessage = '';
-        
-        switch(field.type) {
-            case 'email':
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                isValid = emailRegex.test(value);
-                errorMessage = 'Please enter a valid email address';
-                break;
-            default:
-                isValid = value.length > 0;
-                errorMessage = 'This field is required';
-        }
-        
-        field.classList.toggle('error', !isValid);
-        const errorElement = field.nextElementSibling;
-        if (errorElement?.classList.contains('error-message')) {
-            errorElement.textContent = isValid ? '' : errorMessage;
-        }
-        
-        return isValid;
-    };
-    
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const fields = form.querySelectorAll('input, textarea');
-        let isValid = true;
-        
-        fields.forEach(field => {
-            if (!validateField(field)) {
-                isValid = false;
-            }
-        });
-        
-        if (isValid) {
-            // Add your form submission logic here
-            console.log('Form is valid, ready to submit');
-        }
-    });
-    
-    form.querySelectorAll('input, textarea').forEach(field => {
-        field.addEventListener('blur', () => validateField(field));
-    });
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !subject || !message) {
+        event.preventDefault();
+        alert('Please fill out all fields before submitting.');
+    }
 });
