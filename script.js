@@ -1,15 +1,28 @@
-/*const texts = ["FE Developer", "UI Designer", "Web Designer", "UX Designer"];
-        let currentIndex = 0;
-        
-        function updateText() {
-            const textElement = document.querySelector('.typing-text span');
-            textElement.textContent = texts[currentIndex];
-            currentIndex = (currentIndex + 1) % texts.length;
-        }
+// Scroll Animation Function
+function addScrollAnimations() {
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    };
 
-        updateText();
-        setInterval(updateText, 4000);*/
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+}
+
+// Call the animation function when the page loads
+document.addEventListener('DOMContentLoaded', addScrollAnimations);
 
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
