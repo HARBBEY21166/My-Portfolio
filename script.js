@@ -123,12 +123,12 @@ window.addEventListener('scroll', () => {
 /**
    * Preloader
    */
-  const preloader = document.querySelector('#preloader');
+  /*const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove();
     });
-  }
+  }*/
 
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
