@@ -956,7 +956,7 @@ background-color: transparent;            border-radius: 4rem;
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-#preloader {
+/*#preloader {
     aria-label: "Loading content";
   position: fixed;
   inset: 0;
@@ -987,7 +987,7 @@ background-color: transparent;            border-radius: 4rem;
   100% {
     transform: rotate(360deg);
   }
-}
+}*/
 /*--------------------------------------------------------------
 # End of Preloader
 --------------------------------------------------------------*/
