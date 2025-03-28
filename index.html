@@ -20,35 +20,31 @@
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css" />
-    <!--font awesome import-->
     <!-- Preload Font Awesome -->
     <link
       rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    <!-- Load Font Awesome asynchronously -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      />
+    </noscript>
+    <!-- Theme toggle functionality -->
+    <script>
+      // Check for saved theme preference or prefer-color-scheme
+      const getThemePreference = () => {
+        if (localStorage.getItem('theme') === 'light') return 'light';
+        if (localStorage.getItem('theme') === 'dark') return 'dark';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      
+      // Apply the theme class early to prevent flash
+      document.documentElement.classList.add(getThemePreference());
+    </script>
   </head>
   <body>
     <!--Header Section-->
@@ -56,7 +52,7 @@
       <a href="index.html" class="logo">
         <img src="logo2.png" alt="Website Logo" width="auto" height="auto" />
       </a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu">
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
       </button>
       <nav class="navbar" role="navigation">
@@ -67,6 +63,10 @@
         <a href="#edu-exp">Resume</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
       </nav>
     </header>
     <!--End of Header Section-->
@@ -122,6 +122,7 @@
           alt="Abbey's portrait"
           width="480"
           height="auto"
+          loading="eager"
         />
       </div>
     </section>
@@ -135,6 +136,7 @@
             alt="Professional portrait of Abbey"
             width="400"
             height="auto"
+            loading="lazy"
           />
           <div class="about-img-decoration" aria-hidden="true"></div>
         </div>
@@ -388,7 +390,7 @@
               <p>
                 Collaborated with WanderUnion, a travel platform using prototype
                 and user interface design to enhance user experience and align
-                with the client’s vision. Developed user-centered designs for
+                with the client's vision. Developed user-centered designs for
                 the sign-up flow and simplified options for Sign up as a
                 Traveler or Operator.
               </p>
@@ -425,20 +427,20 @@
           <button
             class="filter-btn active"
             data-filter="all"
-            aria-label="Toggle Menu"
+            aria-label="Show all projects"
           >
             All
           </button>
-          <button class="filter-btn" data-filter="web" aria-label="Toggle Menu">
+          <button class="filter-btn" data-filter="web" aria-label="Show web design projects">
             Web Design
           </button>
-          <button class="filter-btn" data-filter="app" aria-label="Toggle Menu">
+          <button class="filter-btn" data-filter="app" aria-label="Show app development projects">
             App Development
           </button>
           <button
             class="filter-btn"
             data-filter="design"
-            aria-label="Toggle Menu"
+            aria-label="Show UI/UX design projects"
           >
             UI/UX Design
           </button>
@@ -448,7 +450,7 @@
           <!-- Project 1 -->
           <div class="portfolio-item web app">
             <div class="portfolio-content">
-              <img src="project1.jpeg" alt="Project 1" />
+              <img src="project1.jpeg" alt="E-Commerce Platform Project" loading="lazy" />
               <div class="item-overlay">
                 <h3>E-Commerce Platform</h3>
                 <p>Web Development, React</p>
@@ -463,7 +465,7 @@
           <!-- Project 2 -->
           <div class="portfolio-item design">
             <div class="portfolio-content">
-              <img src="project2.png" alt="Project 2" />
+              <img src="project2.png" alt="Crypto Wallet Mobile App Design" loading="lazy" />
               <div class="item-overlay">
                 <h3>Crypto Wallet Mobile App</h3>
                 <p>UI/UX, Figma</p>
@@ -478,7 +480,7 @@
           <!-- Project 3 -->
           <div class="portfolio-item web">
             <div class="portfolio-content">
-              <img src="project3.jpeg" alt="Project 3" />
+              <img src="project3.jpeg" alt="Portfolio Website Project" loading="lazy" />
               <div class="item-overlay">
                 <h3>Portfolio Website</h3>
                 <p>Web Development, Next.js</p>
@@ -493,7 +495,7 @@
           <!-- Project 4 -->
           <div class="portfolio-item app">
             <div class="portfolio-content">
-              <img src="project4.png" alt="Project 4" />
+              <img src="project4.png" alt="Travel Agency App Design" loading="lazy" />
               <div class="item-overlay">
                 <h3>Travel Agency App</h3>
                 <p>Ui/Ux, Figma</p>
@@ -508,7 +510,7 @@
           <!-- Project 5 -->
           <div class="portfolio-item design web">
             <div class="portfolio-content">
-              <img src="project5.jpeg" alt="Project 5" />
+              <img src="project5.jpeg" alt="Dashboard Design Project" loading="lazy" />
               <div class="item-overlay">
                 <h3>Dashboard Design</h3>
                 <p>UI/UX, Web Development</p>
@@ -523,7 +525,7 @@
           <!-- Project 6 -->
           <div class="portfolio-item app design">
             <div class="portfolio-content">
-              <img src="project6.jpeg" alt="Project 6" />
+              <img src="project6.jpeg" alt="Social Media App Project" loading="lazy" />
               <div class="item-overlay">
                 <h3>Social Media App</h3>
                 <p>Mobile Development, UI Design</p>
@@ -550,7 +552,7 @@
         <div class="testimonial-carousel">
           <div class="testimonial-item active">
             <div class="testimonial-image">
-              <img src="testimonial1.png" alt="Sarah Johnson" />
+              <img src="testimonial1.png" alt="Sarah Johnson" loading="lazy" />
               <div class="quote-icon">
                 <i class="fa-solid fa-quote-left"></i>
               </div>
@@ -566,7 +568,7 @@
 
           <div class="testimonial-item">
             <div class="testimonial-image">
-              <img src="testimonial2.png" alt="Michael Chen" />
+              <img src="testimonial2.png" alt="Michael Chen" loading="lazy" />
               <div class="quote-icon">
                 <i class="fa-solid fa-quote-left"></i>
               </div>
@@ -582,7 +584,7 @@
 
           <div class="testimonial-item">
             <div class="testimonial-image">
-              <img src="testimonial3.png" alt="Emma Davis" />
+              <img src="testimonial3.png" alt="Emma Davis" loading="lazy" />
               <div class="quote-icon">
                 <i class="fa-solid fa-quote-left"></i>
               </div>
@@ -596,11 +598,11 @@
             <p class="testimonial-role">Product Manager</p>
           </div>
 
-          <button class="nav-button prev-button" aria-label="Toggle Previous">
-            ←
+          <button class="nav-button prev-button" aria-label="Previous testimonial">
+            <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button class="nav-button next-button" aria-label="Toggle Next">
-            →
+          <button class="nav-button next-button" aria-label="Next testimonial">
+            <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
 
@@ -641,6 +643,7 @@
                     placeholder="Your Name"
                     required
                   />
+                  <span class="error-message" id="name-error"></span>
                 </div>
                 <div class="form-group">
                   <label class="visually-hidden" for="email">Your Email</label>
@@ -652,6 +655,7 @@
                     placeholder="Your Email"
                     required
                   />
+                  <span class="error-message" id="email-error"></span>
                 </div>
               </div>
               <div class="form-group full">
@@ -664,6 +668,7 @@
                   placeholder="Subject"
                   required
                 />
+                <span class="error-message" id="subject-error"></span>
               </div>
               <div class="form-group full">
                 <label class="visually-hidden" for="message">Message</label>
@@ -674,6 +679,7 @@
                   placeholder="Message"
                   required
                 ></textarea>
+                <span class="error-message" id="message-error"></span>
               </div>
               <div class="form-group full">
                 <button type="submit" class="submit-btn">
@@ -723,9 +729,7 @@
               <div class="text">
                 <span>Email:</span>
                 <p>
-                  <a href="mailto:olamilekansunday445@gmail.com"
-                    >Olamilekansunday445@gmail.com</a
-                  >
+                  <a href="mailto:abbeyaina0@gmail.com">abbeyaina0@gmail.com</a>
                 </p>
               </div>
             </div>
@@ -753,40 +757,39 @@
     <!--End Contact Form Section-->
 
     <!-- Map Start -->
-    <div
-      class="container-xxl pt-5 px-0 wow"
-      data-wow-delay="0.1s"
-      loading="lazy"
-    >
-      <div class="container-xxl pt-5 px-0">
-        <div class="bg-dark">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.2587321737574!2d28.102394874489395!3d-26.123105660674252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950dcb06c7465f%3A0x954ae9c8d6cf328b!2s19%20Whitney%20Rd%2C%20Bramley%20View%2C%20Johannesburg%2C%202090!5e0!3m2!1sen!2sza!4v1734789361641!5m2!1sen!2sza"
-            frameborder="0"
-            style="width: 100%; height: 450px; border: 0"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
-        </div>
-      </div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.2587321737574!2d28.102394874489395!3d-26.123105660674252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950dcb06c7465f%3A0x954ae9c8d6cf328b!2s19%20Whitney%20Rd%2C%20Bramley%20View%2C%20Johannesburg%2C%202090!5e0!3m2!1sen!2sza!4v1734789361641!5m2!1sen!2sza"
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Office location map"
+        aria-hidden="false"
+      ></iframe>
     </div>
     <!-- Map End -->
 
     <!-- Footer Section -->
     <footer class="footer">
       <div class="social">
-        <a href="https://www.linkedin.com/in/abbey0/" target="blank"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
-        <a href="https://github.com/HARBBEY21166" target="blank"
-          ><i class="fa-brands fa-github"></i
-        ></a>
-        <a href="https://x.com/abbeyaina0" target="blank"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/abbey0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/HARBBEY21166" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://x.com/abbeyaina0" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
       </div>
       <ul class="list">
         <li><a href="#">FAQ</a></li>
@@ -795,10 +798,22 @@
         <li><a href="#">Contact</a></li>
         <li><a href="#">Privacy Policies</a></li>
       </ul>
-      <p class="copyright">&copy; Abbey Script | All Right Reserved</p>
+      <p class="copyright">&copy; Abbey Script | All Rights Reserved</p>
     </footer>
     <!-- End of Footer Section -->
-    <div id="preloader"></div>
+    
+    <div id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+      <!-- Loading Spinner Overlay -->
+<div class="loading-spinner-overlay" id="loadingSpinner">
+  <div class="spinner-container">
+    <div class="spinner"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+</div>
+    
     <script src="script.js"></script>
   </body>
 </html>
