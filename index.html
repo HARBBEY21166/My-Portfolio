@@ -1,819 +1,468 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Abbey's Portfolio - Front-end Developer specializing in responsive web design and development"
-    />
-    <meta
-      name="keywords"
-      content="front-end developer, web development, abbey aina, portfolio, UI/UX design"
-    />
-    <title>Abbey Aina Portfolio Website</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Favicon for all devices -->
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Preload Font Awesome -->
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      />
-    </noscript>
-    <!-- Theme toggle functionality -->
-    <script>
-      // Check for saved theme preference or prefer-color-scheme
-      const getThemePreference = () => {
-        if (localStorage.getItem('theme') === 'light') return 'light';
-        if (localStorage.getItem('theme') === 'dark') return 'dark';
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      
-      // Apply the theme class early to prevent flash
-      document.documentElement.classList.add(getThemePreference());
-    </script>
-  </head>
-  <body>
-    <!--Header Section-->
-    <header class="header">
-      <a href="index.html" class="logo">
-        <img src="logo2.png" alt="Website Logo" width="auto" height="auto" />
-      </a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
-      </button>
-      <nav class="navbar" role="navigation">
-        <a href="index.html" class="active" aria-current="page">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#skills">Skills</a>
-        <a href="#edu-exp">Resume</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon"></i>
-          <i class="fa-solid fa-sun"></i>
-        </button>
+<html lang="en" class="light-mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abbey - Front-End Developer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">Abbey</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
-    </header>
-    <!--End of Header Section-->
+      <div class="right-nav">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </button>
+        <div class="social-links">
+          <a href="https://github.com/abbey" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/abbey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:abbey@example.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
+  <main>
     <!-- Hero Section -->
-    <section class="home" id="home">
-      <div class="img-background">
-        <div class="img-overlay"></div>
-      </div>
-      <div class="home-content">
-        <h1>Hi, It's <span>Abbey</span></h1>
-        <h3 class="typing-text">I'm a <span></span></h3>
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/abbey0/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit my LinkedIn profile"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/HARBBEY21166"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit my Github profile"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://x.com/abbeyaina0"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit my Twitter profile"
-          >
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="#" aria-label="Visit my Instagram profile">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#" aria-label="Visit my Whatsapp profile">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Hi, it's Abbey</h1>
+            <p><span id="typing-text"></span><span class="typing-cursor">|</span></p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">Contact Me</a>
+              <a href="#projects" class="btn btn-secondary">View My Work</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="profile-image">
+              <img src="dp.png" alt="Abbey">
+            </div>
+          </div>
         </div>
-        <div class="cta-buttons">
-          <a href="#contact" class="btn">Hire me</a>
-          <a href="#edu-exp" class="btn">Resume</a>
-        </div>
-      </div>
-      <div class="home-img">
-        <img
-          src="herobg1.png"
-          alt="Abbey's portrait"
-          width="480"
-          height="auto"
-          loading="eager"
-        />
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-      <div class="about-container">
-        <div class="about-img">
-          <img
-            src="herobg.png"
-            alt="Professional portrait of Abbey"
-            width="400"
-            height="auto"
-            loading="lazy"
-          />
-          <div class="about-img-decoration" aria-hidden="true"></div>
-        </div>
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
-          <h2 class="section-title">About <span class="highlight">Me</span></h2>
-          <div class="about-text">
-            <p>
-              I'm a dedicated front-end developer with a passion for creative
-              problem-solving and innovation. With over 2 years of experience in
-              web development, I have a proven track record of delivering
-              exceptional results.
-            </p>
-            <p>
-              Holding a certification in front-end development from
-              freeCodeCamp, I have applied my skills to a variety of projects,
-              from e-commerce websites to salon landing pages, including
-              <a
-                href="https://mikehairstylist.lovestoblog.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-              >
-                <span>Mike Hairstylist</span>
-                <i class="fa-solid fa-external-link-alt" aria-hidden="true"></i>
-              </a>
-              and more.
-            </p>
+          <div class="about-image">
+            <img src="dp.png" alt="Abbey working">
           </div>
-          <a href="#portfolio" class="btn">View my work</a>
+          <div class="about-text">
+            <p>Hello! I'm Abbey, a passionate front-end developer with 5 years of experience creating 
+              responsive and user-friendly web applications. I specialize in modern JavaScript frameworks 
+              like React and Next.js, with a strong focus on creating performant and accessible user interfaces.</p>
+            <p>I graduated with a degree in Computer Science from University of Technology and have since 
+              worked with various startups and established companies to deliver high-quality web solutions.</p>
+            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source 
+              projects, or hiking in the mountains.</p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-      <h2 class="section-title">My <span class="highlight">Skills</span></h2>
-      <div class="skills-grid">
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-html5 skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">HTML5</p>
-          <div class="skill-tooltip">
-            Advanced proficiency in semantic HTML and accessibility
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-content">
+          <h3>Frontend Development</h3>
+          <div class="skill-icons">
+            <div class="skill-icon">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-vuejs"></i>
+              <span>Vue.js</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-sass"></i>
+              <span>Sass</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-bootstrap"></i>
+              <span>Bootstrap</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-figma"></i>
+              <span>Figma</span>
+            </div>
           </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-css3 skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">CSS3</p>
-          <div class="skill-tooltip">
-            Expert in responsive design and animations
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-react skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">React</p>
-          <div class="skill-tooltip">
-            Experience with React hooks and modern practices
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-figma skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">Figma</p>
-          <div class="skill-tooltip">UI/UX design and prototyping</div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-js skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">JavaScript</p>
-          <div class="skill-tooltip">
-            Strong knowledge of ES6+ and modern JavaScript
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-php skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">PHP</p>
-          <div class="skill-tooltip">
-            Backend development and server-side programming
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-git-alt skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">Git</p>
-          <div class="skill-tooltip">
-            Version control and collaborative development
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-wordpress skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">WordPress</p>
-          <div class="skill-tooltip">
-            Custom theme development and CMS expertise
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-vuejs skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">Vue.js</p>
-          <div class="skill-tooltip">
-            Frontend development with Vue.js framework
-          </div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <i class="fab fa-github skill-icon" aria-hidden="true"></i>
-          <p class="skill-name">GitHub</p>
-          <div class="skill-tooltip">
-            Collaborative development and project management
+
+          <h3>Tools & Others</h3>
+          <div class="skill-icons">
+            <div class="skill-icon">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-npm"></i>
+              <span>npm</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Responsive</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fas fa-universal-access"></i>
+              <span>Accessibility</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Performance</span>
+            </div>
+            <div class="skill-icon">
+              <i class="fas fa-search"></i>
+              <span>SEO</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- End of Skills Section -->
 
-    <!--Service Section-->
+    <!-- Services Section -->
     <section id="services" class="services">
       <div class="container">
-        <h2 class="heading">My <span>Services</span></h2>
+        <h2 class="section-title">My Services</h2>
         <div class="services-grid">
-          <article class="service-item" data-delay="100">
-            <div class="icon icon-bounce" aria-hidden="true">
-              <i class="fa-solid fa-code"></i>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
             </div>
-            <h3>
-              <a href="#" class="service-link">Web Development</a>
-            </h3>
-            <p>
-              Responsive web design, HTML/CSS development, JavaScript
-              functionality, and performance optimization.
-            </p>
-          </article>
-
-          <article class="service-item" data-delay="200">
-            <div class="icon icon-pulse" aria-hidden="true">
-              <i class="fa-solid fa-pen-nib"></i>
-            </div>
-            <h3>
-              <a href="#" class="service-link">UI/UX Design</a>
-            </h3>
-            <p>
-              User research, wireframing, prototyping, and usability testing to
-              create user-centered designs.
-            </p>
-          </article>
-
-          <article class="service-item" data-delay="300">
-            <div class="icon" aria-hidden="true">
-              <i class="fa-solid fa-brush"></i>
-            </div>
-            <h3>
-              <a href="#" class="service-link">Branding</a>
-            </h3>
-            <p>
-              Logo design, brand guidelines, and graphic design for cohesive
-              brand identity.
-            </p>
-          </article>
-
-          <article class="service-item" data-delay="400">
-            <div class="icon" aria-hidden="true">
-              <i class="fa-solid fa-mobile"></i>
-            </div>
-            <h3>
-              <a href="#" class="service-link">Responsive Design</a>
-            </h3>
-            <p>
-              Ensuring websites are optimized for different devices and screen
-              sizes, from desktops to mobile phones.
-            </p>
-          </article>
-
-          <article class="service-item" data-delay="500">
-            <div class="icon icon-spin" aria-hidden="true">
-              <i class="fa-solid fa-gear"></i>
-            </div>
-            <h3>
-              <a href="#" class="service-link">Maintenance & Support</a>
-            </h3>
-            <p>
-              Ongoing website maintenance, bug fixing, and support services.
-            </p>
-          </article>
-
-          <article class="service-item" data-delay="600">
-            <div class="icon" aria-hidden="true">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
-            </div>
-            <h3>
-              <a href="#" class="service-link">SEO Best Practices</a>
-            </h3>
-            <p>
-              Implementing techniques to improve search engine ranking and
-              visibility.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!--End of Service Section-->
-
-    <!--Education & Experience Section-->
-    <section class="edu-exp" id="edu-exp">
-      <div class="timeline-container">
-        <!-- Education Column -->
-        <div>
-          <h2 class="column-header">Education</h2>
-          <div class="timeline-box education">
-            <div class="timeline-content">
-              <h3>Front-End Development</h3>
-              <div class="year">
-                <i class="fas fa-calendar"></i> 2022 - 2023
-              </div>
-              <p>freeCodeCamp Certification</p>
-            </div>
-
-            <div class="timeline-content">
-              <h3>Front-End Web Development</h3>
-              <div class="year">
-                <i class="fas fa-calendar"></i> May 2024 - Oct 2024
-              </div>
-              <p>Alx Alumni Certification, Front-End Web Development</p>
-            </div>
-
-            <div class="timeline-content">
-              <h3>Professional Foundations</h3>
-              <div class="year">
-                <i class="fas fa-calendar"></i> Mar 2024 - May 2024
-              </div>
-              <p>Alx Alumni Certification, Professional Foundations</p>
-            </div>
+            <h3>Web Development</h3>
+            <p>Custom websites and web applications built with modern technologies and best practices.</p>
           </div>
-        </div>
-
-        <!-- Experience Column -->
-        <div>
-          <h2 class="column-header">Experience</h2>
-          <div class="timeline-box experience">
-            <div class="timeline-content">
-              <h3>Web Developer Internship @ Gaotek Inc</h3>
-              <div class="year">
-                <i class="fas fa-calendar"></i> May 2024 - Nov 2024
-              </div>
-              <p>
-                GAO Tek Inc. and GAO RFID Inc. are among the top 10 global
-                providers in B2B & B2G technologies, and BLE & RFID,
-                respectively, ranked by leading market researchers.
-              </p>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
             </div>
-
-            <div class="timeline-content">
-              <h3>UI/UX Designer @ WanderUnion</h3>
-              <div class="year">
-                <i class="fas fa-calendar"></i> Sep 2024 - Oct 2024
-              </div>
-              <p>
-                Collaborated with WanderUnion, a travel platform using prototype
-                and user interface design to enhance user experience and align
-                with the client's vision. Developed user-centered designs for
-                the sign-up flow and simplified options for Sign up as a
-                Traveler or Operator.
-              </p>
+            <h3>Responsive Design</h3>
+            <p>Mobile-first websites that work perfectly on all devices and screen sizes.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
             </div>
-
-            <div class="timeline-content">
-              <h3>Wordpress Developer @ Mike Hairstylist</h3>
-              <div class="year">
-                <i class="fas fa-calendar"></i> Jan 2024 - Jan 2024
-              </div>
-              <p>
-                Created a professional landing page for a hairstylist using
-                WordPress, showcasing services and enhancing online presence. ●
-                Implemented responsive design principles to ensure optimal
-                viewing across devices. ● Utilized SEO best practices to improve
-                search engine visibility and attract potential clients.
-              </p>
+            <h3>UI/UX Design</h3>
+            <p>User-centered design that creates intuitive and engaging user experiences.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tachometer-alt"></i>
             </div>
+            <h3>Performance Optimization</h3>
+            <p>Speed up your website for better user experience and SEO rankings.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-universal-access"></i>
+            </div>
+            <h3>Accessibility</h3>
+            <p>Ensure your website is accessible to all users, including those with disabilities.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>SEO Optimization</h3>
+            <p>Improve your website's visibility in search engines and drive more traffic.</p>
           </div>
         </div>
       </div>
     </section>
-    <!--End of Education & Experience Section-->
 
-    <!--Portfolio Section-->
-    <section id="portfolio" class="portfolio-section">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">My <span>Portfolio</span></h2>
-          <p class="section-description">Check out some of my recent work</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-categories">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="web">Web Development</button>
+          <button class="category-btn" data-category="ui">UI/UX Design</button>
+          <button class="category-btn" data-category="app">Mobile App</button>
         </div>
-
-        <div class="filters">
-          <button
-            class="filter-btn active"
-            data-filter="all"
-            aria-label="Show all projects"
-          >
-            All
-          </button>
-          <button class="filter-btn" data-filter="web" aria-label="Show web design projects">
-            Web Design
-          </button>
-          <button class="filter-btn" data-filter="app" aria-label="Show app development projects">
-            App Development
-          </button>
-          <button
-            class="filter-btn"
-            data-filter="design"
-            aria-label="Show UI/UX design projects"
-          >
-            UI/UX Design
-          </button>
-        </div>
-
-        <div class="portfolio-grid">
-          <!-- Project 1 -->
-          <div class="portfolio-item web app">
-            <div class="portfolio-content">
-              <img src="project1.jpeg" alt="E-Commerce Platform Project" loading="lazy" />
-              <div class="item-overlay">
-                <h3>E-Commerce Platform</h3>
-                <p>Web Development, React</p>
-                <div class="item-links">
-                  <a href="#" class="view-project">View Project</a>
-                  <a href="#" class="view-code">Code</a>
+        <div class="projects-grid">
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/500x300" alt="E-commerce Platform">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/abbey/ecommerce" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                    <i class="fab fa-github"></i>
+                  </a>
                 </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>E-commerce Platform</h3>
+              <p>A fully responsive e-commerce platform built with Next.js and Stripe integration.</p>
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Stripe</span>
+                <span class="project-tag">Tailwind CSS</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="portfolio-item design">
-            <div class="portfolio-content">
-              <img src="project2.png" alt="Crypto Wallet Mobile App Design" loading="lazy" />
-              <div class="item-overlay">
-                <h3>Crypto Wallet Mobile App</h3>
-                <p>UI/UX, Figma</p>
-                <div class="item-links">
-                  <a href="#" class="view-project">View Project</a>
-                  <a href="#" class="view-code">Code</a>
+          <div class="project-card" data-category="app">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/500x300" alt="Task Management App">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/abbey/taskmanager" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                    <i class="fab fa-github"></i>
+                  </a>
                 </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Task Management App</h3>
+              <p>A drag-and-drop task management application with real-time updates.</p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">Styled Components</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="portfolio-item web">
-            <div class="portfolio-content">
-              <img src="project3.jpeg" alt="Portfolio Website Project" loading="lazy" />
-              <div class="item-overlay">
-                <h3>Portfolio Website</h3>
-                <p>Web Development, Next.js</p>
-                <div class="item-links">
-                  <a href="#" class="view-project">View Project</a>
-                  <a href="#" class="view-code">Code</a>
+          <div class="project-card" data-category="ui">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/500x300" alt="Portfolio Website">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/abbey/portfolio" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                    <i class="fab fa-github"></i>
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="portfolio-item app">
-            <div class="portfolio-content">
-              <img src="project4.png" alt="Travel Agency App Design" loading="lazy" />
-              <div class="item-overlay">
-                <h3>Travel Agency App</h3>
-                <p>Ui/Ux, Figma</p>
-                <div class="item-links">
-                  <a href="#" class="view-project">View Project</a>
-                  <a href="#" class="view-code">Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="portfolio-item design web">
-            <div class="portfolio-content">
-              <img src="project5.jpeg" alt="Dashboard Design Project" loading="lazy" />
-              <div class="item-overlay">
-                <h3>Dashboard Design</h3>
-                <p>UI/UX, Web Development</p>
-                <div class="item-links">
-                  <a href="#" class="view-project">View Project</a>
-                  <a href="#" class="view-code">Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="portfolio-item app design">
-            <div class="portfolio-content">
-              <img src="project6.jpeg" alt="Social Media App Project" loading="lazy" />
-              <div class="item-overlay">
-                <h3>Social Media App</h3>
-                <p>Mobile Development, UI Design</p>
-                <div class="item-links">
-                  <a href="#" class="view-project">View Project</a>
-                  <a href="#" class="view-code">Code</a>
-                </div>
+            <div class="project-info">
+              <h3>Portfolio Website</h3>
+              <p>A modern portfolio website built with Next.js and Tailwind CSS.</p>
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">Tailwind CSS</span>
+                <span class="project-tag">Framer Motion</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--End of Portfolio Section-->
 
-    <!--Testimonial Section-->
-    <section class="testimonial-section">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
       <div class="container">
-        <div class="section-header">
-          <h2>What Our <span>Clients Say</span></h2>
-          <p>Discover why businesses trust us to deliver exceptional results</p>
+        <h2 class="section-title">What Clients Say</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial-track">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p>Abbey is an exceptional developer who delivered our project ahead of schedule. The attention to detail and problem-solving skills were impressive. I highly recommend working with her!</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="https://via.placeholder.com/60" alt="Sarah Johnson">
+                </div>
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>CEO, TechStart Inc.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p>Working with Abbey was a pleasure. She understood our requirements perfectly and created a website that exceeded our expectations. Her technical skills and creativity are top-notch.</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="https://via.placeholder.com/60" alt="Michael Chen">
+                </div>
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <p>Marketing Director, GrowthLabs</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p>Abbey transformed our outdated website into a modern, responsive platform that our customers love. Her expertise in UI/UX design and front-end development made all the difference.</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="https://via.placeholder.com/60" alt="Emily Rodriguez">
+                </div>
+                <div class="author-info">
+                  <h4>Emily Rodriguez</h4>
+                  <p>Founder, StyleHouse</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-controls">
+            <button class="testimonial-btn prev" aria-label="Previous testimonial">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonial-dots"></div>
+            <button class="testimonial-btn next" aria-label="Next testimonial">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-
-        <div class="testimonial-carousel">
-          <div class="testimonial-item active">
-            <div class="testimonial-image">
-              <img src="testimonial1.png" alt="Sarah Johnson" loading="lazy" />
-              <div class="quote-icon">
-                <i class="fa-solid fa-quote-left"></i>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              "Working with this team has been an absolute game-changer for our
-              business. Their attention to detail and innovative solutions have
-              helped us achieve remarkable results."
-            </p>
-            <h3 class="testimonial-name">Sarah Johnson</h3>
-            <p class="testimonial-role">Marketing Director</p>
-          </div>
-
-          <div class="testimonial-item">
-            <div class="testimonial-image">
-              <img src="testimonial2.png" alt="Michael Chen" loading="lazy" />
-              <div class="quote-icon">
-                <i class="fa-solid fa-quote-left"></i>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              "The level of professionalism and expertise demonstrated has
-              exceeded our expectations. They truly understand our needs and
-              deliver outstanding results consistently."
-            </p>
-            <h3 class="testimonial-name">Michael Chen</h3>
-            <p class="testimonial-role">Tech Entrepreneur</p>
-          </div>
-
-          <div class="testimonial-item">
-            <div class="testimonial-image">
-              <img src="testimonial3.png" alt="Emma Davis" loading="lazy" />
-              <div class="quote-icon">
-                <i class="fa-solid fa-quote-left"></i>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              "I'm impressed by their ability to tackle complex challenges with
-              innovative solutions. They've been instrumental in our success and
-              I highly recommend their services."
-            </p>
-            <h3 class="testimonial-name">Emma Davis</h3>
-            <p class="testimonial-role">Product Manager</p>
-          </div>
-
-          <button class="nav-button prev-button" aria-label="Previous testimonial">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="nav-button next-button" aria-label="Next testimonial">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-
-        <div class="dots-container"></div>
       </div>
     </section>
-    <!--End of Testimonial Section-->
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section id="contact" class="contact">
       <div class="container">
-        <header class="section-header">
-          <h2 class="heading">Contact <span>Us</span></h2>
-          <h3>Have a Project?</h3>
-          <p>
-            Or a concept that really excites you? Let's turn that idea into
-            reality. Shoot me a message.
-          </p>
-        </header>
-
-        <div class="content-wrapper">
-          <!-- Form Container -->
-          <div class="form-container">
-            <form
-              action="https://formsubmit.co/648ec98c62ce2b78f4f1299ae881d446"
-              method="POST"
-              id="contactForm"
-              class="contact-form"
-            >
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="visually-hidden" for="name">Your Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-control"
-                    placeholder="Your Name"
-                    required
-                  />
-                  <span class="error-message" id="name-error"></span>
-                </div>
-                <div class="form-group">
-                  <label class="visually-hidden" for="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Your Email"
-                    required
-                  />
-                  <span class="error-message" id="email-error"></span>
-                </div>
-              </div>
-              <div class="form-group full">
-                <label class="visually-hidden" for="subject">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  class="form-control"
-                  placeholder="Subject"
-                  required
-                />
-                <span class="error-message" id="subject-error"></span>
-              </div>
-              <div class="form-group full">
-                <label class="visually-hidden" for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-control"
-                  placeholder="Message"
-                  required
-                ></textarea>
-                <span class="error-message" id="message-error"></span>
-              </div>
-              <div class="form-group full">
-                <button type="submit" class="submit-btn">
-                  <span class="btn-text">Send Message</span>
-                  <span class="btn-icon"
-                    ><i class="fa-solid fa-paper-plane"></i
-                  ></span>
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Contact Info -->
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
           <div class="contact-info">
-            <div class="info-box">
-              <div class="icon" aria-hidden="true">
-                <i class="fa-solid fa-location-dot"></i>
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:abbey@example.com">abbey@example.com</a>
               </div>
-              <div class="text">
-                <span>Address:</span>
-                <address>
-                  19 Whitney Road, Bramley View, Johannesburg, South Africa 2090
-                </address>
+              <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/abbey" target="_blank" rel="noopener noreferrer">linkedin.com/in/abbey</a>
               </div>
-            </div>
-
-            <div class="info-box">
-              <div class="icon" aria-hidden="true">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div class="text">
-                <span>Phone:</span>
-                <p>
-                  <a
-                    href="tel:+27843171229"
-                    aria-label="Call us at +27 84 317 1229"
-                    >+27 84 317 1229</a
-                  >
-                </p>
+              <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/abbey" target="_blank" rel="noopener noreferrer">github.com/abbey</a>
               </div>
             </div>
-
-            <div class="info-box">
-              <div class="icon" aria-hidden="true">
-                <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact-form-container">
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
               </div>
-              <div class="text">
-                <span>Email:</span>
-                <p>
-                  <a href="mailto:abbeyaina0@gmail.com">abbeyaina0@gmail.com</a>
-                </p>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
               </div>
-            </div>
-
-            <div class="info-box">
-              <div class="icon" aria-hidden="true">
-                <i class="fa-solid fa-globe"></i>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
               </div>
-              <div class="text">
-                <span>Website:</span>
-                <p>
-                  <a
-                    href="https://abbeyaina.netlify.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >AbbeyAina.netlify.app</a
-                  >
-                </p>
-              </div>
-            </div>
+              <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
-    <!--End Contact Form Section-->
+  </main>
 
-    <!-- Map Start -->
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.2587321737574!2d28.102394874489395!3d-26.123105660674252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950dcb06c7465f%3A0x954ae9c8d6cf328b!2s19%20Whitney%20Rd%2C%20Bramley%20View%2C%20Johannesburg%2C%202090!5e0!3m2!1sen!2sza!4v1734789361641!5m2!1sen!2sza"
-        width="100%" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Office location map"
-        aria-hidden="false"
-      ></iframe>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Abbey. All rights reserved.</p>
     </div>
-    <!-- Map End -->
+  </footer>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="social">
-        <a href="https://www.linkedin.com/in/abbey0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/HARBBEY21166" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://x.com/abbeyaina0" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="#" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="#" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-      </div>
-      <ul class="list">
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy Policies</a></li>
-      </ul>
-      <p class="copyright">&copy; Abbey Script | All Rights Reserved</p>
-    </footer>
-    <!-- End of Footer Section -->
-    
-    <div id="back-to-top" class="back-to-top" aria-label="Back to top">
-      <i class="fa-solid fa-arrow-up"></i>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <div class="toast-content">
+      <div class="toast-title"></div>
+      <div class="toast-message"></div>
     </div>
+  </div>
 
-    <!-- Loading Spinner Overlay -->
-    <div class="loading-spinner-overlay" id="loadingSpinner">
-      <div class="spinner-container">
-        <div class="spinner"></div>
-        <p class="loading-text">Loading...</p>
-      </div>
-    </div>
-    
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
