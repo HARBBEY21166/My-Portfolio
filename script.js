@@ -363,3 +363,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Add this to your existing script.js file
+
+// Resume tab functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const resumeTabs = document.querySelectorAll(".resume-tab");
+  const resumeContents = document.querySelectorAll(".resume-tab-content");
+  
+  if (resumeTabs.length > 0) {
+    resumeTabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        // Remove active class from all tabs
+        resumeTabs.forEach(t => t.classList.remove("active"));
+        
+        // Add active class to clicked tab
+        tab.classList.add("active");
+        
+        // Hide all tab contents
+        resumeContents.forEach(content => {
+          content.classList.remove("active");
+        });
+        
+        // Show selected tab content
+        const tabId = tab.getAttribute("data-tab");
+        document.getElementById(tabId).classList.add("active");
+      });
+    });
+  }
+});
