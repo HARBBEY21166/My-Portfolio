@@ -8,10 +8,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <a href="#" class="logo">Abbey</a>
+      <a href="/" class="logo">Abbey</a>
       <nav class="nav">
         <ul class="nav-list">
           <li><a href="#about" class="nav-link">About</a></li>
@@ -56,13 +66,13 @@
             <h1>Hi, it's Abbey</h1>
             <p><span id="typing-text"></span><span class="typing-cursor">|</span></p>
             <div class="hero-buttons">
-              <a href="#contact" class="btn btn-primary">Contact Me</a>
-              <a href="#projects" class="btn btn-secondary">View My Work</a>
+              <a href="#contact" class="btn btn-primary">Hire Me</a>
+              <a href="#resume" class="btn btn-secondary">Resume</a>
             </div>
           </div>
           <div class="hero-image">
             <div class="profile-image">
-              <img src="herobg1.png" alt="Abbey">
+              <img src="herobg1.png" alt="Abbey's portrait">
             </div>
           </div>
         </div>
@@ -75,23 +85,19 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
           <div class="about-image">
-            <img src="herobg.png" alt="Abbey working">
+            <img src="herobg.png" alt="Professional portrait of Abbey">
           </div>
           <div class="about-text">
-            <p>Hello! I'm Abbey, a passionate front-end developer with 5 years of experience creating 
-              responsive and user-friendly web applications. I specialize in modern JavaScript frameworks 
-              like React and Next.js, with a strong focus on creating performant and accessible user interfaces.</p>
-            <p>I graduated with a degree in Computer Science from University of Technology and have since 
-              worked with various startups and established companies to deliver high-quality web solutions.</p>
-            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-              projects, or hiking in the mountains.</p>
+            <p>I’m a Front-End Developer passionate about building websites that are not just visually appealing but also highly functional. With over two years of experience, I’ve worked extensively with HTML, CSS, JavaScript, React, and WordPress to create responsive and user-friendly web solutions.</p>
+            <p>I thrive on solving challenges—whether it's writing clean, efficient code, designing interfaces that users love, or optimizing websites for better performance. Every project is an opportunity to bring new ideas to life and exceed expectations.</p>
+            <p>🔹 Let’s Connect! If you’re looking for a frontend developer to build or enhance your online presence with creative, user-focused web solutions, I’d love to collaborate.</p>
             <div class="about-stats">
               <div class="stat">
-                <span class="stat-number">5+</span>
+                <span class="stat-number">2+</span>
                 <span class="stat-label">Years Experience</span>
               </div>
               <div class="stat">
-                <span class="stat-number">50+</span>
+                <span class="stat-number">20+</span>
                 <span class="stat-label">Projects Completed</span>
               </div>
               <div class="stat">
@@ -279,7 +285,7 @@
 
           <div class="project-card" data-category="app">
             <div class="project-image">
-              <img src="project5.jpeg" alt="Task Management App">
+              <img src="project2.png" alt="Crypto Wallet Mobile App">
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
@@ -292,19 +298,19 @@
               </div>
             </div>
             <div class="project-info">
-              <h3>Task Management App</h3>
-              <p>A drag-and-drop task management application with real-time updates.</p>
+              <h3>Crypto Wallet Mobile App Design</h3>
+              <p>Crypto Wallet Mobile App Design built using Figma</p>
               <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Firebase</span>
-                <span class="project-tag">Styled Components</span>
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UI</span>
+                <span class="project-tag">UX</span>
               </div>
             </div>
           </div>
 
           <div class="project-card" data-category="ui">
             <div class="project-image">
-              <img src="project6.jpeg" alt="Portfolio Website">
+              <img src="project4.png" alt="Portfolio Website">
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
@@ -317,12 +323,12 @@
               </div>
             </div>
             <div class="project-info">
-              <h3>Portfolio Website</h3>
-              <p>A modern portfolio website built with Next.js and Tailwind CSS.</p>
+              <h3>Travel Agency App</h3>
+              <p>A modern Travel Agency Design</p>
               <div class="project-tags">
-                <span class="project-tag">Next.js</span>
-                <span class="project-tag">Tailwind CSS</span>
-                <span class="project-tag">Framer Motion</span>
+                <span class="project-tag">UI</span>
+                <span class="project-tag">UX</span>
+                <span class="project-tag">Figma</span>
               </div>
             </div>
           </div>
@@ -345,7 +351,7 @@
               </div>
               <div class="testimonial-author">
                 <div class="author-image">
-                  <img src="testimonial3.png" alt="Sarah Johnson">
+                  <img src="testimonial.png" alt="Sarah Johnson">
                 </div>
                 <div class="author-info">
                   <h4>Sarah Johnson</h4>
@@ -381,7 +387,7 @@
               </div>
               <div class="testimonial-author">
                 <div class="author-image">
-                  <img src="testimonial1.png" alt="Emily Rodriguez">
+                  <img src="testimonial3.png" alt="Emily Rodriguez">
                 </div>
                 <div class="author-info">
                   <h4>Emily Rodriguez</h4>
@@ -403,6 +409,154 @@
       </div>
     </section>
 
+    <!-- Resume Section -->
+<section id="resume" class="resume">
+  <div class="container">
+    <h2 class="section-title">My Resume</h2>
+    
+    <div class="resume-content">
+      <div class="resume-tabs">
+        <button class="resume-tab active" data-tab="experience">Experience</button>
+        <button class="resume-tab" data-tab="education">Education</button>
+        <button class="resume-tab" data-tab="certifications">Certifications</button>
+      </div>
+      
+      <div class="resume-body">
+        <!-- Experience Tab -->
+        <div class="resume-tab-content active" id="experience">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2021 - Present</div>
+              <div class="timeline-content">
+                <h3>Senior Front-end Developer</h3>
+                <h4>TechCorp Inc.</h4>
+                <p>Lead front-end development for multiple high-traffic web applications. Implemented modern UI/UX practices and improved performance by 40%. Mentored junior developers and established coding standards.</p>
+                <ul class="timeline-list">
+                  <li>Developed responsive interfaces using React and Next.js</li>
+                  <li>Implemented CI/CD pipelines for front-end projects</li>
+                  <li>Reduced load times by 60% through optimization techniques</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2018 - 2021</div>
+              <div class="timeline-content">
+                <h3>Front-end Developer</h3>
+                <h4>WebSolutions Ltd.</h4>
+                <p>Developed and maintained client websites and web applications. Collaborated with designers to implement pixel-perfect interfaces and ensure cross-browser compatibility.</p>
+                <ul class="timeline-list">
+                  <li>Built interactive UIs with JavaScript and Vue.js</li>
+                  <li>Implemented responsive designs using CSS Grid and Flexbox</li>
+                  <li>Integrated third-party APIs and payment gateways</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2016 - 2018</div>
+              <div class="timeline-content">
+                <h3>Junior Web Developer</h3>
+                <h4>Digital Creations</h4>
+                <p>Assisted in the development of websites for small businesses. Focused on HTML, CSS, and basic JavaScript functionality.</p>
+                <ul class="timeline-list">
+                  <li>Created responsive layouts for various screen sizes</li>
+                  <li>Implemented custom WordPress themes</li>
+                  <li>Optimized website performance and SEO</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Education Tab -->
+        <div class="resume-tab-content" id="education">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2012 - 2016</div>
+              <div class="timeline-content">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <h4>University of Technology</h4>
+                <p>Graduated with honors. Specialized in web development and user interface design.</p>
+                <ul class="timeline-list">
+                  <li>GPA: 3.8/4.0</li>
+                  <li>Senior Project: E-commerce platform with real-time inventory management</li>
+                  <li>Member of Web Development Club</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2010 - 2012</div>
+              <div class="timeline-content">
+                <h3>Associate Degree in Multimedia Design</h3>
+                <h4>Design Institute</h4>
+                <p>Focused on digital design principles and interactive media.</p>
+                <ul class="timeline-list">
+                  <li>Dean's List for all semesters</li>
+                  <li>Portfolio Award for Best Interactive Design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Certifications Tab -->
+        <div class="resume-tab-content" id="certifications">
+          <div class="certifications-grid">
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fab fa-react"></i>
+              </div>
+              <h3>React Developer Certification</h3>
+              <p>Meta (formerly Facebook)</p>
+              <p class="certification-date">2022</p>
+            </div>
+            
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fab fa-aws"></i>
+              </div>
+              <h3>AWS Certified Developer</h3>
+              <p>Amazon Web Services</p>
+              <p class="certification-date">2021</p>
+            </div>
+            
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fas fa-universal-access"></i>
+              </div>
+              <h3>Web Accessibility Specialist</h3>
+              <p>International Association of Accessibility Professionals</p>
+              <p class="certification-date">2020</p>
+            </div>
+            
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Mobile Web Specialist</h3>
+              <p>Google Developers Certification</p>
+              <p class="certification-date">2019</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resume-download">
+        <a href="#" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download Full Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
@@ -414,20 +568,25 @@
             <div class="contact-details">
               <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:abbey@example.com">abbey@example.com</a>
+                <a href="mailto:olamilekansunday445@gmail.com">olamilekansunday445@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-phone"></i>
+                <a href="tel:+27843171229" aria-label="Call us at +27 84 317 1229">+27 84 317 1229</a>
               </div>
               <div class="contact-item">
                 <i class="fab fa-linkedin"></i>
-                <a href="https://linkedin.com/in/abbey" target="_blank" rel="noopener noreferrer">linkedin.com/in/abbey</a>
+                <a href="https://www.linkedin.com/in/abbey0/" target="_blank" rel="noopener noreferrer">linkedin.com/in/abbey0</a>
               </div>
               <div class="contact-item">
                 <i class="fab fa-github"></i>
-                <a href="https://github.com/abbey" target="_blank" rel="noopener noreferrer">github.com/abbey</a>
+                <a href="https://github.com/HARBBEY21166" target="_blank" rel="noopener noreferrer">github.com/HARBBEY21166</a>
               </div>
             </div>
           </div>
           <div class="contact-form-container">
-            <form id="contactForm" class="contact-form">
+            <form action="https://formsubmit.co/648ec98c62ce2b78f4f1299ae881d446"
+              method="POST" id="contactForm" class="contact-form">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Your name">
@@ -462,6 +621,11 @@
       <div class="toast-message"></div>
     </div>
   </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="script.js"></script>
 </body>
