@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Preloader
+  const preloader = document.querySelector('.preloader');
+  
+  // Hide preloader after page loads
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      document.body.style.overflow = 'auto'; // Enable scrolling
+      
+      // Add fade-in animations to sections
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section, index) => {
+        section.classList.add('fade-in');
+        section.classList.add(`delay-${(index % 4) + 1}`);
+      });
+    }, 500);
+  });
+
   // Set current year in footer
   document.getElementById("currentYear").textContent = new Date().getFullYear();
 
