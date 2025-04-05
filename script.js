@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Typing animation for hero section
   const typingText = document.getElementById("typing-text");
-  const phrases = ["I'm a Front-end developer", "I'm a UI/UX designer"];
+  const phrases = ["I'm a Front-end developer", "I'm a UI/UX designer", "I'm a Web Designer", "I'm a WordPress Developer"];
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -391,4 +391,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+});
+
+// Add this to your existing script.js file
+// Scroll to top button functionality
+//
+const backToTopButton = document.getElementById('back-to-top');
+
+// Show button when user scrolls down 200px
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 200) {
+    backToTopButton.classList.add('visible');
+  } else {
+    backToTopButton.classList.remove('visible');
+  }
+});
+
+// Scroll to top when clicked
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
