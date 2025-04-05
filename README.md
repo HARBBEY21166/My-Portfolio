@@ -7,7 +7,7 @@ Responsive Design: Mobile-friendly layout for seamless viewing on different devi
 
 Animated Text: Dynamic typing effect for a personalized introduction.
 
-Social Media Integration: Links to GitHub, LinkedIn, Twitter, and more.
+Social Media Integration: Links to GitHub, LinkedIn, and more.
 
 Skills and Experience Sections: Structured timeline and skill indicators to showcase expertise.
 
