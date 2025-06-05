@@ -352,6 +352,17 @@ ul {
   background-color: rgba(66, 135, 245, 0.1);
 }
 
+.btn-secondary2 {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  margin: 0 auto;
+}
+
+.btn-secondary2:hover {
+  background-color: rgba(66, 135, 245, 0.1);
+}
+
+
 .btn-full {
   width: 100%;
 }
