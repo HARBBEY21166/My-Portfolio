@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         section.classList.add('fade-in');
         section.classList.add(`delay-${(index % 4) + 1}`);
       });
-    }, 500);
+    }, 5000);
   });
 
   // Set current year in footer
