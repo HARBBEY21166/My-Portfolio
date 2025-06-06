@@ -7,13 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       preloader.classList.add('fade-out');
       document.body.style.overflow = 'auto'; // Enable scrolling
-      
-      // Add fade-in animations to sections
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section, index) => {
-        section.classList.add('fade-in');
-        section.classList.add(`delay-${(index % 4) + 1}`);
-      });
     }, 5000);
   });
 
@@ -202,7 +195,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Testimonial slider
+  // Remove the existing fade-in animations for sections as they will conflict with ScrollReveal.
+  // The fade-in and delay classes should also be removed from the CSS if they are only used for this purpose.
+
+  // Initialize ScrollReveal
+  ScrollReveal({
+    distance: '50px',
+    duration: 3000,
+    reset: true // Optional: set to false if you only want the animation to play once
+  });
+
+  // Apply ScrollReveal to sections
+  ScrollReveal().reveal('#about');
+  ScrollReveal().reveal('#skills');
+  ScrollReveal().reveal('#services');
+  ScrollReveal().reveal('#projects');
+  ScrollReveal().reveal('#testimonials');
+  ScrollReveal().reveal('#resume');
+  ScrollReveal().reveal('#contact');
+
+  // Testimonial slider (keep existing code for slider functionality)
   const testimonialTrack = document.querySelector(".testimonial-track");
   const testimonialCards = document.querySelectorAll(".testimonial-card");
   const dotsContainer = document.querySelector(".testimonial-dots");
