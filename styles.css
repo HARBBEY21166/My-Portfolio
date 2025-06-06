@@ -10,7 +10,7 @@
   --color-text-light: #6b7280;
   --color-card-bg: #fff;
   --color-card-shadow: rgba(0, 0, 0, 0.1);
-  
+
   /* Common Variables */
   --border-radius: 0.375rem;
   --transition: all 0.3s ease;
@@ -189,13 +189,13 @@ ul {
   gap: 1rem;
 }
 
+.social-links a:hover {
+  color: var(--color-primary);
+}
+
 .social-links a {
   color: var(--color-secondary);
   transition: var(--transition);
-}
-
-.social-links a:hover {
-  color: var(--color-primary);
 }
 
 .mobile-menu-btn {
@@ -396,6 +396,9 @@ ul {
   width: 100%;
   height: auto;
   display: block;
+  border: 5px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .about-text p {
@@ -1066,37 +1069,37 @@ ul {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .timeline-item {
     padding-left: 0;
     width: 100%;
   }
-  
+
   .timeline-item:nth-child(odd) {
     padding-right: 50%;
     padding-left: 2rem;
     text-align: right;
   }
-  
+
   .timeline-item:nth-child(even) {
     padding-left: 50%;
     padding-right: 2rem;
     margin-top: -1rem;
   }
-  
+
   .timeline-dot {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .timeline-item:nth-child(odd) .timeline-content {
     margin-right: 2rem;
   }
-  
+
   .timeline-item:nth-child(even) .timeline-content {
     margin-left: 2rem;
   }
-  
+
   .timeline-item:nth-child(odd) .timeline-date {
     text-align: right;
   }
@@ -1106,16 +1109,24 @@ ul {
   .resume-tabs {
     justify-content: flex-start;
   }
-  
+
   .resume-tab {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
-  
+
   .certification-card {
     padding: 1.25rem;
   }
 }
+
+.projects-button-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically (if needed) */
+  margin-top:5rem;
+}
+
 
 /* Contact Section */
 .contact {
@@ -1440,8 +1451,3 @@ ul {
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 .delay-4 { animation-delay: 0.8s; }
-
-.projects-button-container {
-  text-align: center;
-  margin-top: 2rem; /* Add some space above the button */
-}
