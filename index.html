@@ -8,14 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="loader">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
+<div class="preloader">
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player src="https://lottie.host/b410db1b-c11e-4b8a-be71-31f95e3a726f/KXVZQFTKi4.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
   </div>
 
   <!-- Header -->
@@ -27,7 +21,7 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
           <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -403,15 +397,18 @@
     <div class="project-tags">
       <span class="project-tag">Next.js</span>
       <span class="project-tag">TypeScript</span>
-      <span class="project-tag">Tailwind CSS</span>
+ <span class="project-tag">Tailwind CSS</span>
       <span class="project-tag">Django REST</span>
     </div>
   </div>
 </div>
         </div>
       </div>
-     
-    </section>
+      <div class="projects-button-container">
+        <a href="/projects.html" class="btn btn-secondary">More Projects</a>
+      </div>
+ </div>
+ </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
@@ -694,8 +691,7 @@
             </div>
           </div>
           <div class="contact-form-container">
-            <form action="https://formsubmit.co/648ec98c62ce2b78f4f1299ae881d446"
-              method="POST" id="contactForm" class="contact-form">
+            <form method="POST" data-netlify="true" id="contactForm" class="contact-form">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Your name">
