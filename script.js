@@ -272,42 +272,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(nextSlide, 5000);
 
   // Contact form submission
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const nameInput = document.getElementById("name");
-      const emailInput = document.getElementById("email");
-      const messageInput = document.getElementById("message");
-
-      // Simple validation
-      if (!nameInput.value || !emailInput.value || !messageInput.value) {
-        showToast("Error", "Please fill in all fields", "error");
-        return;
-      }
-
-      // Simulate form submission
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.textContent;
-
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-
-      // Simulate API call with timeout
-      setTimeout(() => {
-        // Reset form
-        contactForm.reset();
-
-        // Reset button
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-
-        // Show success message
-        showToast("Message sent!", "Thank you for your message. I'll get back to you soon.", "success");
-      }, 1500);
-    });
-  }
 
   // Toast notification function
   function showToast(title, message, type = "success") {
