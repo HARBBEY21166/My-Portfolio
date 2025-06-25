@@ -23,7 +23,7 @@ JavaScript: Interactivity and animations
 Font Awesome: Icons for social media links
 
 
-Live Preview: [Coming soon on Netlify!]
+Live Preview: [https://abbeyscript.netlify.app/]
 
 
 Setup Instructions:
